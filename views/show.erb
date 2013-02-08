@@ -1,4 +1,11 @@
-<h3><a href="/">Paste Another!</a> | <a href="/show/<%= params[:id] %>/render">Attempt to Render as Code</a></h3>
-<pre>
-<%=CGI::escapeHTML @paste %>
+<h3>
+  <a href="/">Paste Another!</a> | 
+  <% if @render %>
+    <a href="/show/<%= params[:id] %>">Raw View</a>
+  <% else %>
+    <a href="/show/<%= params[:id] %>/render">Attempt to Render as Code</a>
+  <% end %>
+</h3>
+<pre <%= @render ? 'class="prettyprint"' : '' %>>
+  <%=CGI::escapeHTML @paste %>
 </pre>

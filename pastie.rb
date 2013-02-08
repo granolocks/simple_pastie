@@ -9,29 +9,18 @@ get '/' do
  erb :paste
 end
 
-#get '/paste' do
-# erb :paste
-#end
-
-get '/show/:id' do
+get '/show/:id/?:render' do
   paste_id = params[:id]
   begin
     File.open("/tmp/#{paste_id}","r"){ |f| @paste = f.read }
   rescue
     @paste = "Unable to find"
+  end
+
+  if params[:render]
+    @render = true
   end
   erb :show
-end
-
-get '/show/:id/render' do
-  paste_id = params[:id]
-  begin
-    File.open("/tmp/#{paste_id}","r"){ |f| @paste = f.read }
-  rescue
-    @paste = "Unable to find"
-  end
-  @render = true
-  erb :render
 end
 
 post '/pasteit' do
