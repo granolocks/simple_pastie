@@ -1,5 +1,17 @@
 <html>
-  <body>
-   <%= yield %>
+  <head>
+    <title>Simple Pastie</title>
+    <% if @render %>
+      <link href="/render-styles.css" type="text/css" rel="stylesheet" />
+      <link href="/prettify.css" type="text/css" rel="stylesheet" />
+      <script type="text/javascript" src="/prettify.js"></script>
+    <% else %>
+      <link href="/render-styles.css" type="text/css" rel="stylesheet" />
+    <% end %>
+  </head>
+  <body <%= @render ? 'onload="prettyPrint()"' : '' %>>
+    <div id="wrapper">
+       <%= yield %>
+    </div>
   </body>
 </html>

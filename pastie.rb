@@ -30,7 +30,8 @@ get '/show/:id/render' do
   rescue
     @paste = "Unable to find"
   end
-  erb :render, :layout => :render_layout
+  @render = true
+  erb :render
 end
 
 post '/pasteit' do
