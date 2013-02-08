@@ -1,0 +1,18 @@
+body {
+  background-color: lightblue;
+}
+
+#wrapper {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+form h3 {display: inline;}
+form input['type=submit'] {display: inline;}
+
+pre { 
+  background-color: white; 
+  margin: 1em !important; 
+  padding: 1em !important;
+  min-height: 200px;
+}
