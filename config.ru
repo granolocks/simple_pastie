@@ -1,5 +1,6 @@
 require './pastie'
 require './helpers'
+require 'cgi'
  
 root_dir = File.dirname(__FILE__)
  

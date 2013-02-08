@@ -1,4 +1,4 @@
 <h3><a href="/">Paste Another!</a> | <a href="/show/<%= params[:id] %>">Raw View</a></h3>
 <pre class="prettyprint">
-  <%= @paste %>
+  <%= CGI::escapeHTML @paste %>
 </pre>

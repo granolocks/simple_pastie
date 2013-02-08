@@ -1,4 +1,4 @@
 <h3><a href="/">Paste Another!</a> | <a href="/show/<%= params[:id] %>/render">Attempt to Render as Code</a></h3>
 <pre>
-<%= @paste %>
+<%=CGI::escapeHTML @paste %>
 </pre>
